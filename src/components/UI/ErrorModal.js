@@ -26,6 +26,14 @@ const ErrorModal = (props) => {
   return (
     <Fragment>
      {ReactDom.createPortal(<Backdrop onCloseModal={props.onCloseModal}/>, document.getElementById('backdrop'))}
+     {ReactDom.createPortal(
+      <Modal 
+    title={props.title}
+    message={props.message}
+    onCloseModal={props.onCloseModal}
+  />, 
+  document.getElementById('modal')
+  )}
     </Fragment>
   );
 };
